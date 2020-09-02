@@ -13,7 +13,7 @@ function _drawActivePokemon() {
 function _drawMyPokemon() {
   let pokies = ProxyState.myPokies
   let template = ""
-  pokies.forEach(p => template += `<li onclick="app.myPokemonsController('${p.id}')">${p.name}</li>`)
+  pokies.forEach(p => template += `<li onclick="app.myPokemonsController.setActive('${p.id}')">${p.name}</li>`)
   document.getElementById('myPokies').innerHTML = template
 }
 

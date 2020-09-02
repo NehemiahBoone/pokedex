@@ -1,19 +1,26 @@
 import { ProxyState } from "../AppState.js"
 import Pokemon from "../Models/Pokemon.js"
-import { pokieApi } from "./AxiosService.js"
+import { sandboxApi } from "./AxiosService.js"
 
 class MyPokemonsService {
   async getMyPokemon() {
-    throw new Error("Method not implemented.")
+    let result = await sandboxApi.get('')
+    ProxyState.myPokies = result.data.data.map(p => new Pokemon(p))
   }
+
   async setActive(id) {
-    throw new Error("Method not implemented.")
+    ProxyState.activePokie = ProxyState.myPokies.find(p => p.id == id)
   }
+
   async addPokemon() {
-    throw new Error("Method not implemented.")
+    let result = await sandboxApi.post('', ProxyState.activePokie)
+    ProxyState.myPokies = [...ProxyState.myPokies, new Pokemon(result.data.data)]
   }
+
   async removePokemon() {
-    throw new Error("Method not implemented.")
+    await sandboxApi.delete(ProxyState.activePokie.id)
+    ProxyState.myPokies = ProxyState.myPokies.filter(p => p.id != ProxyState.activePokie.id)
+    ProxyState.activePokie = null
   }
 }
 
