@@ -3,16 +3,16 @@ import Pokemon from "../Models/Pokemon.js"
 import { pokieApi } from "./AxiosService.js"
 
 class MyPokemonsService {
-  getMyPokemon() {
+  async getMyPokemon() {
     throw new Error("Method not implemented.")
   }
-  setActive(id) {
+  async setActive(id) {
     throw new Error("Method not implemented.")
   }
-  addPokemon() {
+  async addPokemon() {
     throw new Error("Method not implemented.")
   }
-  removePokemon() {
+  async removePokemon() {
     throw new Error("Method not implemented.")
   }
 }
