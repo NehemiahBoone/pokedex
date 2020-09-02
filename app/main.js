@@ -1,7 +1,8 @@
-import ApiPokemonsController from "./Controllers/ApiPokemonsController.js";
+import ApiPokemonsController from "./Controllers/ApiPokemonsController.js"
+
 
 class App {
-  pokemonsController = new ApiPokemonsController();
+  apiPokemonsController = new ApiPokemonsController()
 }
 
 window["app"] = new App();
