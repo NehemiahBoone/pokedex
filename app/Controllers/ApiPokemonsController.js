@@ -1,9 +1,8 @@
 import { ProxyState } from "../AppState.js"
 import apiPokemonsService from "../Services/ApiPokemonsService.js"
 
-
 //Private
-function _draw() {
+function _drawApiPokemons() {
 
 }
 
