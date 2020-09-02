@@ -4,6 +4,7 @@ export const pokieApi = axios.create({
   timeout: 10000
 })
 
+// @ts-ignore
 export const sandboxApi = axios.create({
   baseURL: "//bcw-sandbox.herokuapp.com/api/Nehemiah/pokemon",
   timeout: 10000
